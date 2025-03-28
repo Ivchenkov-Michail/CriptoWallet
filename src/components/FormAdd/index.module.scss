@@ -1,0 +1,85 @@
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+.window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 400px;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+  z-index: 10;
+  border-radius: 10px;
+  padding: 50px 40px;
+  > h2 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+  }
+}
+
+.quantityStep {
+  margin-top: 20px;
+  > div:first-child {
+    display: flex;
+    justify-content: center;
+    > div {
+      &:last-child {
+        margin-left: 10px;
+      }
+    }
+  }
+  > div:nth-child(2) {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #000;
+    > input {
+      font-size: 16px;
+      height: 30px;
+      width: 100%;
+      border: none;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  > button {
+    margin-top: 20px;
+  }
+}
+
+.list {
+  height: 200px;
+  > div {
+    overflow-y: auto;
+    margin-top: 20px;
+    height: auto;
+    // min-height: 200px;
+    max-height: 200px;
+  }
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  height: 30px;
+  > div {
+    flex: 1 1;
+    display: flex;
+    justify-content: center;
+  }
+  &:hover {
+    background-color: rgb(203, 203, 203);
+  }
+}

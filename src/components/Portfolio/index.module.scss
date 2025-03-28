@@ -1,0 +1,37 @@
+.table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+  box-sizing: border-box;
+  > div {
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .table {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 700px) {
+  .table {
+    font-size: 10px;
+  }
+}
+@media (max-width: 590px) {
+  .table {
+    font-size: 8px;
+  }
+}
+
+// @media (max-width: 590px) {
+//   .table {
+//     font-size: 8px;
+//   }
+// }

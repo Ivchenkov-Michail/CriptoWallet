@@ -1,0 +1,45 @@
+.coin {
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    color: #000;
+    transition: all 0.4s ease-in-out;
+    border-radius: 10px;
+    height: 60px;
+    box-sizing: border-box;
+    cursor: pointer;
+    > div {
+      flex: 1 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+    }
+    &:hover {
+      background-color: rgb(203, 203, 203);
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .coin {
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 700px) {
+  .coin {
+    height: 30px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 590px) {
+  .coin {
+    font-size: 8px;
+  }
+}

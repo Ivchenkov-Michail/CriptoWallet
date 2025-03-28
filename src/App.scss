@@ -1,0 +1,85 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+// Portfolio.scss
+.portfolio {
+  width: 100%;
+  // max-width: 800px;
+  // background: #1e1e1e;
+  // padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  height: 80vh;
+  box-sizing: border-box;
+}
+
+.asset-list {
+  list-style: none;
+  padding: 0;
+}
+
+.asset-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.asset-item:last-child {
+  border-bottom: none;
+}
+
+.button {
+  background: #ff9800;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #e68900;
+}
+
+/* src/styles/components/_portfolio.scss */
+
+.portfolio__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  & + .portfolio__item {
+    margin-top: 10px;
+  }
+}
+
+.portfolio__item span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.portfolio__item span:last-child {
+  color: red; /* Цвет для изменения цены */
+}
+
+.container {
+  max-width: 1464px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
