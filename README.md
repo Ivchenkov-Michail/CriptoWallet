@@ -1,54 +1,57 @@
-# React + TypeScript + Vite
+# 📊 Crypto Portfolio Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Crypto Portfolio Tracker** — это веб-приложение для отслеживания криптовалютного портфеля в реальном времени с данными из **Binance API**. Поддерживает автоматическую подписку на обновления цен через **WebSocket**, управление активами через **Redux Toolkit**, и виртуализацию списка.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Запуск проекта
 
-## Expanding the ESLint configuration
+### 1 Установите зависимости:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2 Стартуйте проект:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```sh
+npm run dev
+```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Проект запустится по адрессу http://localhost:3000
+
+## Архитектура проекта
+
+Это веб-приложение для отслеживания криптовалютного портфеля в реальном времени. Данные обновляются через WebSocket-соединение с Binance, а управление активами происходит через Redux Toolkit.
+
+### Работа с сервером
+
+Взаимодействие с сервером с помощью вебсокетов.
+Вся реализация сокета оформлена в services/WebSocketService.ts в виде класса, который инкапсулирует логику взаимодействия с сокет сервером.
+
+### Внутреннее состояние
+
+Для работы с внутренним состоянием применяется redux-toolkit. В нём хранится список активов, которые отслеживаются через сокеты. Реализованы эшены реализующие логику обновления состояния. Вся реализация по redux части находится в дирректории store.
+
+### UI
+
+Находится в директориях components и ui. Реализована форма для добавления активов и список активов.
+
+### Виртуализация
+
+В приложении реализованна виртуализация в компонентеу ./components/Portfolio. Для этого использовались react-window и react-virtualized-auto-sizer.
+Позволяет приложению стабильно работать даже при большом объёме отслеживаемых активов.
+
+## Список библиотек
+
+```ch
+    "@reduxjs/toolkit": "^2.6.1",
+    "axios": "^1.8.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "react-virtualized-auto-sizer": "^1.0.25",
+    "react-window": "^1.8.11",
+    "sass": "^1.86.0",
+    "uuid": "^11.1.0"
 ```
