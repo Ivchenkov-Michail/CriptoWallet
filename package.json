@@ -18,7 +18,6 @@
     "react-virtualized-auto-sizer": "^1.0.25",
     "react-window": "^1.8.11",
     "sass": "^1.86.0",
-    "socket.io-client": "^4.8.1",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
